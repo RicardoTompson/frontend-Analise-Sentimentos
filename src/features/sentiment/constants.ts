@@ -7,7 +7,7 @@ export const apiBase = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000
 export const examples = [
   "Hoje me senti acolhido e confiante com o atendimento.",
   "Estou frustrado porque meu pedido atrasou de novo.",
-  "Foi uma experiencia normal, nada chamou muita atencao.",
+  "Foi uma experiência normal, nada chamou muita atenção.",
 ];
 
 export const sentimentLabels = ["positivo", "neutro", "negativo"];
@@ -15,7 +15,7 @@ export const sentimentLabels = ["positivo", "neutro", "negativo"];
 export const sentimentCopy: Record<string, SentimentCopy> = {
   positivo: {
     title: "Tendencia positiva",
-    description: "O texto indica satisfacao, alivio ou uma experiencia favoravel.",
+    description: "O texto indica satisfação, alívio ou uma experiência favorável.",
     badge: "bg-emerald-100 text-emerald-800 ring-emerald-200",
     icon: CheckCircle2,
     tone: "from-emerald-500 to-teal-500",
@@ -29,7 +29,7 @@ export const sentimentCopy: Record<string, SentimentCopy> = {
   },
   negativo: {
     title: "Tendencia negativa",
-    description: "O texto sugere insatisfacao, tristeza, irritacao ou uma experiencia ruim.",
+    description: "O texto sugere insatisfação, tristeza, irritação ou uma experiência ruim.",
     badge: "bg-rose-100 text-rose-800 ring-rose-200",
     icon: AlertCircle,
     tone: "from-rose-500 to-red-500",

@@ -56,7 +56,7 @@ export function ResultPanel({ currentCopy, orderedProbabilities, result }: Resul
                     </div>
                     <div className="h-3 overflow-hidden rounded-full bg-slate-100">
                       <div
-                        className={`h-full rounded-full bg-gradient-to-r ${tone}`}
+                        className={`h-full rounded-full bg-linear-to-r ${tone}`}
                         style={{ width: `${Math.max(3, Math.round(probability * 100))}%` }}
                       />
                     </div>
@@ -71,7 +71,7 @@ export function ResultPanel({ currentCopy, orderedProbabilities, result }: Resul
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">Aguardando texto</p>
           <h2 className="mt-4 text-2xl font-semibold text-slate-950">O resultado aparece aqui</h2>
           <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-slate-600">
-            Depois da analise, voce vera o sentimento previsto, a confianca principal e a distribuicao das
+            Depois da análise, você verá o sentimento previsto, a confiança principal e a distribuição das
             probabilidades retornadas pelo backend.
           </p>
         </div>

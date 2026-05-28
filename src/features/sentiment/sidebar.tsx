@@ -30,7 +30,7 @@ export function SentimentSidebar({
 }: SidebarProps) {
   return (
     <aside className="border-b border-slate-200 bg-slate-950 px-5 py-5 text-white lg:sticky lg:top-0 lg:h-screen lg:w-72 lg:shrink-0 lg:border-b-0 lg:border-r lg:border-white/10 lg:px-4">
-      <div className="flex h-full flex-col gap-6 rounded-3xl border border-white/10 bg-white/[0.04] p-4 lg:rounded-[1.75rem]">
+      <div className="flex h-full flex-col gap-6 rounded-3xl border border-white/10 bg-white/4 p-4 lg:rounded-[1.75rem]">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-cyan-300 text-slate-950">

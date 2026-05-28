@@ -7,7 +7,7 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Analisador de Sentimentos",
-  description: "Frontend para analise de sentimentos com PLN.",
+  description: "Frontend para análise de sentimentos com PLN.",
 };
 
 export default function RootLayout({

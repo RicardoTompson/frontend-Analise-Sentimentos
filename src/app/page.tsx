@@ -67,8 +67,8 @@ export default function Home() {
   const navItems = [
     { href: "#analise", label: "Analisar", icon: Sparkles },
     { href: "#resultado", label: "Resultado", icon: currentCopy.icon },
-    { href: "#estatisticas", label: "Estatisticas", icon: BarChart3 },
-    { href: "#historico", label: "Historico", icon: History },
+    { href: "#estatisticas", label: "Estatísticas", icon: BarChart3 },
+    { href: "#historico", label: "Histórico", icon: History },
   ];
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -79,7 +79,7 @@ export default function Home() {
     const texto = text.trim();
 
     if (!texto) {
-      setError("Digite como voce esta se sentindo para iniciar a analise.");
+      setError("Digite como você está se sentindo para iniciar a análise.");
       return;
     }
 
@@ -95,8 +95,8 @@ export default function Home() {
       if (!response.ok) {
         throw new Error(
           response.status >= 500
-            ? "A API retornou um erro interno. Verifique se o backend esta rodando e se o metodo predict_proba esta correto."
-            : `Nao foi possivel analisar o texto. Codigo ${response.status}.`,
+            ? "A API retornou um erro interno. Verifique se o backend está rodando e se o método predict_proba esta correto."
+            : `Não foi possível analisar o texto. Codigo ${response.status}.`,
         );
       }
 
@@ -114,7 +114,7 @@ export default function Home() {
       setError(
         requestError instanceof Error
           ? requestError.message
-          : "Nao foi possivel conectar ao backend de analise.",
+          : "Não foi possível conectar ao backend de análise.",
       );
     } finally {
       setLoading(false);

@@ -22,8 +22,8 @@ export function StatsSection({
       <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/80 sm:p-6">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Grafico 1</p>
-            <h2 className="mt-2 text-xl font-semibold text-slate-950">Distribuicao</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Gráfico 1</p>
+            <h2 className="mt-2 text-xl font-semibold text-slate-950">Distribuição</h2>
           </div>
           <span className="inline-flex size-10 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700">
             <PieChart className="size-5" aria-hidden="true" />
@@ -41,7 +41,7 @@ export function StatsSection({
               </div>
               <div className="h-4 overflow-hidden rounded-full bg-slate-100">
                 <div
-                  className={`h-full rounded-full bg-gradient-to-r ${sentimentCopy[label].tone}`}
+                  className={`h-full rounded-full bg-linear-to-r ${sentimentCopy[label].tone}`}
                   style={{ width: historyCount ? `${Math.max(5, Math.round(percent * 100))}%` : "0%" }}
                 />
               </div>
@@ -53,8 +53,8 @@ export function StatsSection({
       <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/80 sm:p-6">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Grafico 2</p>
-            <h2 className="mt-2 text-xl font-semibold text-slate-950">Confianca</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Gráfico 2</p>
+            <h2 className="mt-2 text-xl font-semibold text-slate-950">Confiança</h2>
           </div>
           <span className="inline-flex size-10 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
             <Activity className="size-5" aria-hidden="true" />
@@ -73,7 +73,7 @@ export function StatsSection({
                   <div className="flex flex-1 flex-col items-center gap-2" key={item.id}>
                     <div className="flex h-32 w-full items-end justify-center rounded-xl bg-white px-2 py-2 ring-1 ring-slate-100">
                       <div
-                        className={`w-full rounded-lg bg-gradient-to-t ${tone}`}
+                        className={`w-full rounded-lg bg-linear-to-t ${tone}`}
                         style={{ height }}
                         title={`${item.sentimento}: ${formatPercent(item.confianca)}`}
                       />
@@ -84,12 +84,12 @@ export function StatsSection({
               })
             ) : (
               <div className="flex h-32 w-full items-center justify-center rounded-xl border border-dashed border-slate-200 bg-white text-sm text-slate-500">
-                As confiancas aparecem apos as analises.
+                As confianças aparecem após as análises.
               </div>
             )}
           </div>
           <div className="mt-4 flex items-center justify-between text-sm">
-            <span className="text-slate-500">Media de confianca</span>
+            <span className="text-slate-500">Média de confiança</span>
             <span className="font-semibold text-slate-950">
               {historyCount ? formatPercent(averageConfidence) : "0%"}
             </span>
