@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "4c81a19f-37e0-4d5a-8c86-analise-sentimentos-pln",
+    "name": "Analise Sentimentos PLN",
+    "description": "Requests para testar o backend de analise de sentimentos e o proxy do frontend Next.js.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Backend",
+      "item": [
+        {
+          "name": "Predict - Backend direto",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Produto chegou atrasado e veio com defeito\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{backend_url}}/predict",
+              "host": [
+                "{{backend_url}}"
+              ],
+              "path": [
+                "predict"
+              ]
+            },
+            "description": "Endpoint principal do backend. O corpo deve usar a chave `text`, como no backend testado."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Frontend Proxy",
+      "item": [
+        {
+          "name": "Sentiment - Proxy Next.js",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Produto chegou atrasado e veio com defeito\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{frontend_url}}/api/sentiment",
+              "host": [
+                "{{frontend_url}}"
+              ],
+              "path": [
+                "api",
+                "sentiment"
+              ]
+            },
+            "description": "Endpoint do front. O Next.js recebe a requisicao e repassa para o backend configurado em `API_URL`."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"Status 200\", function () {",
+          "  pm.response.to.have.status(200);",
+          "});",
+          "",
+          "pm.test(\"Resposta contem sentimento\", function () {",
+          "  const json = pm.response.json();",
+          "  pm.expect(json).to.have.property(\"sentimento\");",
+          "});"
+        ]
+      }
+    }
+  ]
+}

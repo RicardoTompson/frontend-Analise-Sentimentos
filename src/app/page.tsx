@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { BarChart3, History, Sparkles } from "lucide-react";
 
 import { AnalysisForm } from "@/features/sentiment/analysis-form";
-import { apiBase, sentimentCopy, sentimentLabels } from "@/features/sentiment/constants";
+import { sentimentApiPath, sentimentCopy, sentimentLabels } from "@/features/sentiment/constants";
 import { DashboardHeader } from "@/features/sentiment/dashboard-header";
 import { HistorySection } from "@/features/sentiment/history-section";
 import { ResultPanel } from "@/features/sentiment/result-panel";
@@ -24,8 +24,8 @@ export default function Home() {
 
   const currentSentiment = normalizeSentiment(result?.sentimento);
   const currentCopy = sentimentCopy[currentSentiment] ?? {
-    title: "Analise concluida",
-    description: "O modelo retornou a classificacao abaixo para o texto enviado.",
+    title: "Análise concluída",
+    description: "O modelo retornou a classificação abaixo para o texto enviado.",
     badge: "bg-slate-100 text-slate-800 ring-slate-200",
     icon: Sparkles,
     tone: "from-sky-500 to-indigo-500",
@@ -86,30 +86,33 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${apiBase}/predict`, {
+      const response = await fetch(sentimentApiPath, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ texto }),
+        body: JSON.stringify({ text: texto }),
       });
+      const data = (await response.json()) as SentimentResult & { message?: string };
 
       if (!response.ok) {
         throw new Error(
-          response.status >= 500
-            ? "A API retornou um erro interno. Verifique se o backend está rodando e se o método predict_proba esta correto."
-            : `Não foi possível analisar o texto. Codigo ${response.status}.`,
+          data.message ??
+            (response.status >= 500
+              ? "A API retornou um erro interno. Verifique se o backend está rodando e se o método predict_proba está correto."
+              : `Não foi possível analisar o texto. Código ${response.status}.`),
         );
       }
 
-      const data = (await response.json()) as SentimentResult;
       setResult(data);
-      setHistory((currentHistory) => [
-        {
-          ...data,
-          id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
-          createdAt: new Date().toISOString(),
-        },
-        ...currentHistory,
-      ].slice(0, 6));
+      setHistory((currentHistory) =>
+        [
+          {
+            ...data,
+            id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+            createdAt: new Date().toISOString(),
+          },
+          ...currentHistory,
+        ].slice(0, 6),
+      );
     } catch (requestError) {
       setError(
         requestError instanceof Error

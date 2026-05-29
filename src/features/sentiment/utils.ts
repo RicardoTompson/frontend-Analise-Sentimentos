@@ -1,5 +1,23 @@
 export function normalizeSentiment(value?: string) {
-  return value?.toLowerCase().trim() ?? "";
+  const normalized = value
+    ?.toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+  if (normalized === "positive" || normalized === "pos") {
+    return "positivo";
+  }
+
+  if (normalized === "neutral" || normalized === "neu") {
+    return "neutro";
+  }
+
+  if (normalized === "negative" || normalized === "neg") {
+    return "negativo";
+  }
+
+  return normalized ?? "";
 }
 
 export function formatPercent(value: number) {

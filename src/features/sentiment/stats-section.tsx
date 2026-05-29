@@ -36,7 +36,7 @@ export function StatsSection({
               <div className="mb-2 flex items-center justify-between gap-3 text-sm">
                 <span className="font-medium capitalize text-slate-700">{label}</span>
                 <span className="font-semibold text-slate-950">
-                  {count} {count === 1 ? "analise" : "analises"}
+                  {count} {count === 1 ? "análise" : "análises"}
                 </span>
               </div>
               <div className="h-4 overflow-hidden rounded-full bg-slate-100">

@@ -31,7 +31,7 @@ export function ResultPanel({ currentCopy, orderedProbabilities, result }: Resul
               <p className="mt-2 text-sm leading-6 text-slate-600">{currentCopy.description}</p>
             </div>
             <div className="rounded-2xl bg-slate-50 px-5 py-4 text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Confianca</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Confiança</p>
               <p className="mt-1 text-3xl font-semibold text-slate-950">{formatPercent(result.confianca)}</p>
             </div>
           </div>

@@ -3,7 +3,7 @@ import { HeartPulse, Moon, Sun } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import { apiBase } from "./constants";
+import { backendApiBase } from "./constants";
 import type { ThemeMode } from "./types";
 import { formatPercent } from "./utils";
 
@@ -69,14 +69,14 @@ export function SentimentSidebar({
         </Button>
 
         <div className="grid gap-3">
-          <SidebarMetric label="Analises" value={historyCount} />
-          <SidebarMetric label="Media" value={historyCount ? formatPercent(averageConfidence) : "0%"} />
-          <SidebarMetric label="Ultimo tom" value={latestSentiment} valueClassName="text-lg capitalize" />
+          <SidebarMetric label="Análises" value={historyCount} />
+          <SidebarMetric label="Média" value={historyCount ? formatPercent(averageConfidence) : "0%"} />
+          <SidebarMetric label="Último tom" value={latestSentiment} valueClassName="text-lg capitalize" />
         </div>
 
         <div className="mt-auto rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">API</p>
-          <p className="mt-2 break-all text-sm text-slate-200">{apiBase}</p>
+          <p className="mt-2 break-all text-sm text-slate-200">{backendApiBase}</p>
         </div>
       </div>
     </aside>
