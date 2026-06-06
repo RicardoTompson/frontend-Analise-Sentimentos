@@ -127,22 +127,6 @@ export function StatsSection({
           </span>
         </div>
 
-<<<<<<< Updated upstream
-        <div className="mt-6 space-y-4">
-          {sentimentStats.map(({ label, count, percent }) => (
-            <div key={label}>
-              <div className="mb-2 flex items-center justify-between gap-3 text-sm">
-                <span className="font-medium capitalize text-slate-700">{label}</span>
-                <span className="font-semibold text-slate-950">
-                  {count} {count === 1 ? "analise" : "analises"}
-                </span>
-              </div>
-              <div className="h-4 overflow-hidden rounded-full bg-slate-100">
-                <div
-                  className={`h-full rounded-full bg-linear-to-r ${sentimentCopy[label].tone}`}
-                  style={{ width: historyCount ? `${Math.max(5, Math.round(percent * 100))}%` : "0%" }}
-                />
-=======
         <div className="mt-6 rounded-2xl bg-slate-50 p-4">
           {historyCount ? (
             <>
@@ -187,7 +171,6 @@ export function StatsSection({
                     </p>
                   </div>
                 ))}
->>>>>>> Stashed changes
               </div>
             </>
           ) : (

@@ -60,13 +60,8 @@ export function HistorySection({
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-<<<<<<< Updated upstream
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">HistÓrico</p>
-          <h2 className="mt-2 text-xl font-semibold text-slate-950">Últimos resultados</h2>
-=======
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Histórico</p>
           <h2 className="mt-2 text-xl font-semibold text-slate-950">Resultados analisados</h2>
->>>>>>> Stashed changes
         </div>
         <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
           <History className="size-3.5" aria-hidden="true" />

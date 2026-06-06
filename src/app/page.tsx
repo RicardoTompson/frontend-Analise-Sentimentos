@@ -111,7 +111,7 @@ export default function Home() {
 
       const data = (await response.json()) as SentimentResult;
       setResult(data);
-<<<<<<< Updated upstream
+      setHistoryPage(1);
       setHistory((currentHistory) => [
         {
           ...data,
@@ -119,20 +119,7 @@ export default function Home() {
           createdAt: new Date().toISOString(),
         },
         ...currentHistory,
-      ].slice(0, 6));
-=======
-      setHistoryPage(1);
-      setHistory((currentHistory) =>
-        [
-          {
-            ...data,
-            id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
-            createdAt: new Date().toISOString(),
-          },
-          ...currentHistory,
-        ],
-      );
->>>>>>> Stashed changes
+      ]);
     } catch (requestError) {
       setError(
         requestError instanceof Error
