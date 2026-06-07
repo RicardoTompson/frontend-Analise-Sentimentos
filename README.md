@@ -267,12 +267,6 @@ Melhorias planejadas:
 
 # 📷 Capturas de Tela
 
-Adicionar imagens demonstrando:
-
-* Tela inicial
-* Dashboard
-* Resultado da análise
-* Histórico
 
 Galeria de telas (exemplos):
 
