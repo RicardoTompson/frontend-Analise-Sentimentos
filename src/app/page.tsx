@@ -14,12 +14,15 @@ import { StatsSection } from "@/features/sentiment/stats-section";
 import type { HistoryItem, SentimentResult, ThemeMode } from "@/features/sentiment/types";
 import { normalizeSentiment } from "@/features/sentiment/utils";
 
+const historyPageSize = 6;
+
 export default function Home() {
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<SentimentResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [history, setHistory] = useState<HistoryItem[]>([]);
+  const [historyPage, setHistoryPage] = useState(1);
   const [theme, setTheme] = useState<ThemeMode>("light");
 
   const currentSentiment = normalizeSentiment(result?.sentimento);
@@ -62,6 +65,12 @@ export default function Home() {
   const averageConfidence = history.length
     ? history.reduce((total, item) => total + Number(item.confianca), 0) / history.length
     : 0;
+  const historyPageCount = Math.max(1, Math.ceil(history.length / historyPageSize));
+  const paginatedHistory = useMemo(() => {
+    const start = (historyPage - 1) * historyPageSize;
+
+    return history.slice(start, start + historyPageSize);
+  }, [history, historyPage]);
   const isDark = theme === "dark";
 
   const navItems = [
@@ -102,6 +111,7 @@ export default function Home() {
 
       const data = (await response.json()) as SentimentResult;
       setResult(data);
+      setHistoryPage(1);
       setHistory((currentHistory) => [
         {
           ...data,
@@ -109,7 +119,7 @@ export default function Home() {
           createdAt: new Date().toISOString(),
         },
         ...currentHistory,
-      ].slice(0, 6));
+      ]);
     } catch (requestError) {
       setError(
         requestError instanceof Error
@@ -169,7 +179,15 @@ export default function Home() {
             historyCount={history.length}
             sentimentStats={sentimentStats}
           />
-          <HistorySection currentCopy={currentCopy} history={history} />
+          <HistorySection
+            currentCopy={currentCopy}
+            currentPage={historyPage}
+            history={paginatedHistory}
+            onPageChange={setHistoryPage}
+            pageSize={historyPageSize}
+            totalCount={history.length}
+            totalPages={historyPageCount}
+          />
         </section>
       </div>
     </main>
