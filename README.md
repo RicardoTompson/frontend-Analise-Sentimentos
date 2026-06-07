@@ -274,11 +274,12 @@ Adicionar imagens demonstrando:
 * Resultado da análise
 * Histórico
 
-Exemplo:
+Galeria de telas (exemplos):
 
-```md
-![Dashboard](./public/dashboard.png)
-```
+<p align="center">
+	<img src="./public/screenshots/dashboard-1.png" width="48%" alt="Dashboard - Análise de Sentimentos" />
+	<img src="./public/screenshots/dashboard-2.png" width="48%" alt="Dashboard - Estatísticas e Histórico" />
+</p>
 
 ---
 
