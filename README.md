@@ -1,36 +1,328 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💙 Sentimental — Plataforma Inteligente de Análise de Sentimentos
 
-## Getting Started
+Uma aplicação moderna desenvolvida com **Next.js**, **TypeScript** e **Recharts** para análise, monitoramento e visualização de sentimentos em textos.
 
-First, run the development server:
+O sistema permite que usuários submetam textos para processamento e obtenham insights emocionais através de dashboards interativos, métricas estatísticas e histórico de análises.
+
+---
+
+## 📌 Visão Geral
+
+O **Sentimental** foi criado para auxiliar na identificação e interpretação de emoções expressas em conteúdos textuais, possibilitando a construção de soluções voltadas para:
+
+* Atendimento ao cliente
+* Monitoramento de redes sociais
+* Pesquisa de satisfação
+* Experiência do usuário (UX)
+* Análise de feedbacks
+* Estudos acadêmicos relacionados à Inteligência Artificial e Processamento de Linguagem Natural (NLP)
+
+A plataforma foi projetada para ser facilmente integrada a APIs externas ou modelos próprios de Machine Learning.
+
+---
+
+# 🚀 Funcionalidades
+
+## 📝 Análise de Sentimentos
+
+* Inserção de textos para análise.
+* Classificação automática do sentimento.
+* Exibição de resultados em tempo real.
+* Interface intuitiva e responsiva.
+
+### Categorias suportadas
+
+* 😀 Positivo
+* 😐 Neutro
+* 😞 Negativo
+
+---
+
+## 📊 Dashboard Analítico
+
+Painel visual com métricas detalhadas:
+
+* Quantidade total de análises realizadas.
+* Distribuição de sentimentos.
+* Tendências e comportamento emocional.
+* Estatísticas agregadas.
+
+---
+
+## 📈 Visualização Gráfica
+
+A aplicação utiliza a biblioteca **Recharts** para apresentar informações através de:
+
+* Gráficos de barras
+* Gráficos de pizza
+* Indicadores estatísticos
+* Comparativos temporais
+
+---
+
+## 📚 Histórico de Análises
+
+Permite consultar análises realizadas anteriormente:
+
+* Texto analisado
+* Resultado obtido
+* Data da análise
+* Métricas associadas
+
+---
+
+## 🎨 Interface Moderna
+
+Construída utilizando:
+
+* Tailwind CSS
+* Shadcn/UI
+* Radix UI
+* Lucide React
+
+Benefícios:
+
+* Responsividade
+* Acessibilidade
+* Componentização
+* Design consistente
+
+---
+
+# 🏗️ Arquitetura do Projeto
+
+```text
+src/
+│
+├── app/
+│   ├── dashboard/
+│   ├── analysis/
+│   ├── history/
+│   └── layout.tsx
+│
+├── components/
+│   ├── ui/
+│   ├── charts/
+│   ├── cards/
+│   └── forms/
+│
+├── features/
+│   └── sentiment/
+│       ├── components/
+│       ├── services/
+│       ├── hooks/
+│       └── types/
+│
+├── lib/
+│
+└── utils/
+```
+
+---
+
+# 🛠️ Tecnologias Utilizadas
+
+## Frontend
+
+* Next.js 15+
+* React 19+
+* TypeScript
+
+## Estilização
+
+* Tailwind CSS
+* PostCSS
+
+## Componentes
+
+* Shadcn/UI
+* Radix UI
+
+## Visualização de Dados
+
+* Recharts
+
+## Ícones
+
+* Lucide React
+
+---
+
+# ⚙️ Instalação
+
+## Pré-requisitos
+
+* Node.js 18+
+* npm, yarn ou pnpm
+
+---
+
+## Clonar o repositório
+
+```bash
+git clone https://github.com/seu-usuario/front-sentimental.git
+```
+
+```bash
+cd front-sentimental
+```
+
+---
+
+## Instalar dependências
+
+```bash
+npm install
+```
+
+---
+
+## Executar em ambiente de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação estará disponível em:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# 📦 Scripts Disponíveis
 
-To learn more about Next.js, take a look at the following resources:
+| Comando       | Descrição                          |
+| ------------- | ---------------------------------- |
+| npm run dev   | Executa em desenvolvimento         |
+| npm run build | Gera build de produção             |
+| npm run start | Executa build gerada               |
+| npm run lint  | Executa análise estática de código |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 🔌 Integração com APIs de IA
 
-## Deploy on Vercel
+O projeto foi desenvolvido para permitir integração com diferentes mecanismos de análise de sentimentos:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* OpenAI
+* Hugging Face
+* Google Gemini
+* Azure AI Language
+* Modelos próprios em Python
+* APIs REST personalizadas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Exemplo de variável de ambiente:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8080
+```
+
+Arquivo:
+
+```text
+.env.local
+```
+
+---
+
+# 🔒 Boas Práticas Implementadas
+
+* TypeScript para tipagem forte.
+* Componentização reutilizável.
+* Separação por features.
+* Responsividade mobile-first.
+* Estrutura escalável.
+* Código preparado para integração contínua.
+
+---
+
+# 📋 Roadmap
+
+## Próximas funcionalidades
+
+* [ ] Autenticação de usuários
+* [ ] Exportação de relatórios em PDF
+* [ ] Comparação entre análises
+* [ ] Histórico persistente em banco de dados
+* [ ] IA generativa para explicação dos resultados
+* [ ] Análise em lote de documentos
+* [ ] Integração com redes sociais
+* [ ] Dashboard administrativo
+
+---
+
+# 🧪 Qualidade de Software
+
+Melhorias planejadas:
+
+* GitHub Actions
+* Testes unitários
+* Testes de integração
+* SonarQube
+* Cobertura de testes
+
+---
+
+# 📷 Capturas de Tela
+
+Adicionar imagens demonstrando:
+
+* Tela inicial
+* Dashboard
+* Resultado da análise
+* Histórico
+
+Exemplo:
+
+```md
+![Dashboard](./public/dashboard.png)
+```
+
+---
+
+# 🤝 Contribuindo
+
+1. Faça um Fork do projeto.
+2. Crie uma branch:
+
+```bash
+git checkout -b feature/minha-feature
+```
+
+3. Faça commit das alterações:
+
+```bash
+git commit -m "feat: nova funcionalidade"
+```
+
+4. Faça push:
+
+```bash
+git push origin feature/minha-feature
+```
+
+5. Abra um Pull Request.
+
+---
+
+# 👨‍💻 Equipe
+
+Projeto desenvolvido pela equipe **Sentimental** como iniciativa voltada para Inteligência Artificial e Análise de Sentimentos.
+
+---
+
+# 📄 Licença
+
+Este projeto ainda não possui licença definida.
+
+Caso deseje disponibilizá-lo publicamente, recomenda-se utilizar uma das seguintes:
+
+* MIT License
+* Apache 2.0
+* GPL v3
+
+---
+
+⭐ Se este projeto foi útil para você, considere deixar uma estrela no repositório.
