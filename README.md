@@ -309,7 +309,23 @@ git push origin feature/minha-feature
 
 # 👨‍💻 Equipe
 
-Projeto desenvolvido pela equipe **Sentimental** como iniciativa voltada para Inteligência Artificial e Análise de Sentimentos.
+O projeto **Sentimental** foi desenvolvido de forma colaborativa por uma equipe multidisciplinar com foco em Inteligência Artificial, Processamento de Linguagem Natural (NLP), Desenvolvimento Web e Visualização de Dados.
+
+## Integrantes
+
+* Allan Marques
+* Emerson Costa
+* Felipe Pimentel
+* Gabriel Martins
+* Heloisa Costa
+* Ricardo Tompson
+* Walison Brandão
+
+## Objetivo da Equipe
+
+Desenvolver uma plataforma inteligente capaz de analisar sentimentos expressos em textos, transformando dados não estruturados em informações úteis para apoio à tomada de decisão, monitoramento de feedbacks e estudos relacionados à Inteligência Artificial.
+
+A equipe atua desde a concepção da solução até a implementação do frontend, backend, integração com modelos de IA e visualização dos resultados por meio de dashboards interativos.
 
 ---
 
